@@ -10,6 +10,7 @@ interface Arithmeticable<T> {
 
 /**
  * Arithmeticable Collection Class
+ * ERROR: it must be "export class ArithmeticableCollection<T extends Atithmeticable>"
  */
 export class ArithmeticableCollection<T> implements Arithmeticable<T> {
   constructor(protected elements: T[]) {
