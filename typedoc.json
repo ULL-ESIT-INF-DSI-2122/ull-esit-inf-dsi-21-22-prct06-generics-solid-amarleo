@@ -1,6 +1,6 @@
 {
   "entryPoints": [
-    "./src/index.ts"
+    "./src/modificacion/arithmeticable.ts"
   ],
   "out": "./docs"
 }
