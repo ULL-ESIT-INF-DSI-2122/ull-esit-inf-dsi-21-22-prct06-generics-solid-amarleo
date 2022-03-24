@@ -51,13 +51,26 @@ export class ArithmeticableCollection<T> implements Arithmeticable<T> {
     return a / b;
   }
 
-
+  /**
+   * add arithemtical method
+   * @param newElement it is the element to insert
+   */
   addArithmeticable(newElement: T) {
     this.elements.push(newElement);
   }
+
+  /**
+   * gets the element by an index
+   * @param index index to search
+   * @returns element on the index
+   */
   getArithmeticable(index: number): T {
     return this.elements[index];
   }
+  /**
+   * get the number of elements
+   * @returns number of elements
+   */
   getNumberOfArithmeticables(): number {
     return this.elements.length;
   }
