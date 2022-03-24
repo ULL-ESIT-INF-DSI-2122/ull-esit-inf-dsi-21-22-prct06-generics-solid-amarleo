@@ -1,5 +1,6 @@
 /**
  * Arithmeticable Interface
+ * ERROR: Los métodos subs, multiply y divide deben de tener un único parámetro
  */
 interface Arithmeticable<T> {
   add(a: T, b: T): T;
