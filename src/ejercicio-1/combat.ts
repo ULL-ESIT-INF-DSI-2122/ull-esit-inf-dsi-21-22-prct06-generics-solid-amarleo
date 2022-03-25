@@ -80,8 +80,7 @@ export class Combat {
         combatRecord += firstFighterHP + 'HP left ]\n\n';
       }
       turns++;
-    } console.log(this.secondFighter.getHp());
-    console.log(secondFighterTotalDamage);
+    }
     if (secondFighterTotalDamage >= this.firstFighter.getHp()) {
       combatRecord += this.firstFighter.getName() + ' fainted!\n' +
         this.secondFighter.getName() + ' Wins!';
