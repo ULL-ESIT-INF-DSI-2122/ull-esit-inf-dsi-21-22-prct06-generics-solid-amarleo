@@ -6,8 +6,8 @@ export class Pokemon extends Fighter {
   protected type: PokemonType;
 
   constructor(name: string, height: number, weight: number, type: PokemonType,
-      attack: number, defense: number, speed: number, hp: number) {
-    super(name, height, weight, attack, defense, speed, hp);
+      attack: number, defense: number, speed: number, hp: number, phrase: string) {
+    super(name, height, weight, attack, defense, speed, hp, phrase);
     this.type = type;
   }
   getType() {

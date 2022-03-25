@@ -7,8 +7,8 @@ export class Marvel extends Fighter {
 
   constructor(name: string, height: number, weight: number,
       species: MarvelSpecies, attack: number, defense: number,
-      speed: number, hp: number) {
-    super(name, height, weight, attack, defense, speed, hp);
+      speed: number, hp: number, phrase: string) {
+    super(name, height, weight, attack, defense, speed, hp, phrase);
     this.species = species;
   }
   getSpecies() {

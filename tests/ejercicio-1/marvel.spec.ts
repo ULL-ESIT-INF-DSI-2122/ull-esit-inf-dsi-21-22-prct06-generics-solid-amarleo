@@ -2,11 +2,11 @@ import 'mocha';
 import {expect} from 'chai';
 import {Marvel} from '../../src/ejercicio-1/marvel';
 
-const ajak = new Marvel('Ajak', 1.7, 65, 'Eternal', 200, 150, 125, 400);
+const ajak = new Marvel('Ajak', 1.7, 65, 'Eternal', 200, 150, 125, 400, 'A lo largo de los años, nunca hemos interferido... hasta ahora.');
 const doctorStrange =
-  new Marvel('Doctor Strange', 1.85, 75, 'Human', 150, 300, 150, 400);
+  new Marvel('Doctor Strange', 1.85, 75, 'Human', 150, 300, 150, 400, 'Sólo eres una mota minúscula y pasajera dentro de un universo indiferente.');
 const heimdall =
-  new Marvel('Heimdall', 1.9, 80, 'Asgardian', 100, 300, 100, 350);
+  new Marvel('Heimdall', 1.9, 80, 'Asgardian', 100, 300, 100, 350, 'Estoy atado por honor a nuestro rey.');
 
 describe('Marvel class tests', () => {
   describe('Marvel Class getters', () => {
@@ -49,6 +49,11 @@ describe('Marvel class tests', () => {
       expect(ajak.getHp()).to.be.eql(400);
       expect(doctorStrange.getHp()).to.be.eql(400);
       expect(heimdall.getHp()).to.be.eql(350);
+    });
+    it('getphrase method', () => {
+      expect(ajak.getPhrase()).to.be.eql('A lo largo de los años, nunca hemos interferido... hasta ahora.');
+      expect(doctorStrange.getPhrase()).to.be.eql('Sólo eres una mota minúscula y pasajera dentro de un universo indiferente.');
+      expect(heimdall.getPhrase()).to.be.eql('Estoy atado por honor a nuestro rey.');
     });
   });
 });
