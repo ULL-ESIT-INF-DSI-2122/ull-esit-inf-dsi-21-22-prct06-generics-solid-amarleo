@@ -19,6 +19,7 @@ const ChikoritaVsGyarados = new Combat(Chikorita, Gyarados);
 const AjakVsDoctorStrange = new Combat(ajak, doctorStrange);
 const AjakVsHeimdall = new Combat(ajak, heimdall);
 const GyaradosVsHeimdall = new Combat(Gyarados, heimdall);
+const NinetalesVsAjak = new Combat(Ninetales, ajak);
 
 describe('Combat Class tests', () => {
   it('Combat Constructor', () => {
@@ -53,21 +54,26 @@ describe('Combat Class tests', () => {
           .to.be.eql(40);
     });
   });
-  // describe('Fighter Start Combat Function', () => {
-    // it('Example 1: Gyarados vs Ninetales', () => {
-      // expect(GyaradosVsNinetales.start()).to.have.string('Gyarados Wins!');
-    // });
-    // it('Example 2: Chikorita vs Gyarados', () => {
-      // expect(ChikoritaVsGyarados.start()).to.have.string('Gyarados Wins!');
-    // });
-    // it('Example 3: Ajak vs Doctor Strange', () => {
-      // expect(AjakVsDoctorStrange.start()).to.have.string('Ajak Wins!');
-    // });
-    // it('Example 4: Ajak vs Heimdall', () => {
-      // expect(AjakVsHeimdall.start()).to.have.string('Ajak Wins!');
-    // });
-    // it('Example 5: Chikorita vs Gyarados', () => {
-      // expect(GyaradosVsHeimdall.start()).to.have.string('Heimdall Wins!');
-    // });
-  // });
+  describe('Fighter Start Combat Function', () => {
+    it('Example 1: Gyarados vs Ninetales', () => {
+      console.log(GyaradosVsNinetales.start());
+      expect(GyaradosVsNinetales.start()).to.have.string('Gyarados Wins!');
+    });
+    it('Example 2: Chikorita vs Gyarados', () => {
+      console.log(ChikoritaVsGyarados.start());
+      expect(ChikoritaVsGyarados.start()).to.have.string('Gyarados Wins!');
+    });
+    it('Example 3: Ajak vs Doctor Strange', () => {
+      console.log(AjakVsDoctorStrange.start());
+      expect(AjakVsDoctorStrange.start()).to.have.string('Doctor Strange Wins!');
+    });
+    it('Example 4: Ajak vs Heimdall', () => {
+      console.log(AjakVsHeimdall.start());
+      expect(AjakVsHeimdall.start()).to.have.string('Ajak Wins!');
+    });
+    it('Example 5: Ninetales vs Heimdall', () => {
+      console.log(NinetalesVsAjak.start());
+      expect(NinetalesVsAjak.start()).to.have.string('Ajak Wins!');
+    });
+  });
 });

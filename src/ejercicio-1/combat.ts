@@ -19,7 +19,7 @@ export class Combat {
   getSecondFighter() {
     return this.secondFighter;
   }
-  fighterDamage(atkFighter: Fighter, defFighter: Fighter) {
+  fighterDamage(atkFighter: Fighter, defFighter: Fighter): number {
     let multiplier: number = 1;
     if ((atkFighter instanceof Pokemon) && (defFighter instanceof Pokemon)) {
       if (atkFighter.getType() == 'Fire') {
@@ -47,5 +47,47 @@ export class Combat {
     }
     return Math.round(
         50 * (atkFighter.getAttack() / defFighter.getDefense()) * multiplier);
+  }
+  start(): string {
+    let firstFighterTotalDamage: number = 0;
+    let secondFighterTotalDamage: number = 0;
+    let firstFighterAttack: number = 0;
+    let secondFighterAttack: number = 0;
+    let turns: number = 1;
+    let combatRecord: string = '';
+    let firstFighterHP: number = this.firstFighter.getHp();
+    let secondFighterHP: number = this.secondFighter.getHp();
+    while (firstFighterTotalDamage < this.secondFighter.getHp() && secondFighterTotalDamage < this.firstFighter.getHp()) {
+      if (turns % 2 === 1) {
+        firstFighterAttack = this.fighterDamage(this.firstFighter, this.secondFighter);
+        firstFighterTotalDamage += firstFighterAttack;
+        combatRecord += 'Turn ' + turns + ': ' + this.firstFighter.getName() +
+          ' hits ' + this.secondFighter.getName() + ' with ' +
+          firstFighterAttack + ' points of damage -> [ ' +
+          secondFighterHP + ' - ' + firstFighterAttack + ' = ';
+        secondFighterHP -= firstFighterAttack;
+        combatRecord += secondFighterHP + 'HP left ]\n';
+      } else {
+        secondFighterAttack = this.fighterDamage(this.secondFighter, this.firstFighter);
+        secondFighterTotalDamage += secondFighterAttack;
+        combatRecord += 'Turn ' + turns + ': ' + this.secondFighter.getName() +
+          ' hits ' + this.firstFighter.getName() + ' with ' +
+          secondFighterAttack + ' points of damage -> [ ' +
+          firstFighterHP + ' - ' + secondFighterAttack + ' = ';
+        firstFighterHP -= secondFighterAttack;
+        combatRecord += firstFighterHP + 'HP left ]\n';
+      }
+      turns++;
+    } console.log(this.secondFighter.getHp());
+    console.log(secondFighterTotalDamage);
+    if (secondFighterTotalDamage >= this.firstFighter.getHp()) {
+      combatRecord += this.firstFighter.getName() + ' fainted!\n' +
+        this.secondFighter.getName() + ' Wins!';
+      return combatRecord;
+    } else if (firstFighterTotalDamage >= this.secondFighter.getHp()) {
+      combatRecord += this.secondFighter.getName() + ' fainted!\n' +
+        this.firstFighter.getName() + ' Wins!';
+      return combatRecord;
+    } else return combatRecord;
   }
 }
