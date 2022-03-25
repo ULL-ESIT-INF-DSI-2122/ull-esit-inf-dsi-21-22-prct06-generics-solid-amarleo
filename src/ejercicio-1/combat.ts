@@ -61,21 +61,23 @@ export class Combat {
       if (turns % 2 === 1) {
         firstFighterAttack = this.fighterDamage(this.firstFighter, this.secondFighter);
         firstFighterTotalDamage += firstFighterAttack;
-        combatRecord += 'Turn ' + turns + ': ' + this.firstFighter.getName() +
+        combatRecord += 'Turn ' + turns + ': ' + this.firstFighter.getPhrase() + '\n\t' +
+          this.firstFighter.getName() +
           ' hits ' + this.secondFighter.getName() + ' with ' +
           firstFighterAttack + ' points of damage -> [ ' +
           secondFighterHP + ' - ' + firstFighterAttack + ' = ';
         secondFighterHP -= firstFighterAttack;
-        combatRecord += secondFighterHP + 'HP left ]\n';
+        combatRecord += secondFighterHP + 'HP left ]\n\n';
       } else {
         secondFighterAttack = this.fighterDamage(this.secondFighter, this.firstFighter);
         secondFighterTotalDamage += secondFighterAttack;
-        combatRecord += 'Turn ' + turns + ': ' + this.secondFighter.getName() +
+        combatRecord += 'Turn ' + turns + ': ' + this.secondFighter.getPhrase() + '\n\t' +
+          this.secondFighter.getName() +
           ' hits ' + this.firstFighter.getName() + ' with ' +
           secondFighterAttack + ' points of damage -> [ ' +
           firstFighterHP + ' - ' + secondFighterAttack + ' = ';
         firstFighterHP -= secondFighterAttack;
-        combatRecord += firstFighterHP + 'HP left ]\n';
+        combatRecord += firstFighterHP + 'HP left ]\n\n';
       }
       turns++;
     } console.log(this.secondFighter.getHp());
