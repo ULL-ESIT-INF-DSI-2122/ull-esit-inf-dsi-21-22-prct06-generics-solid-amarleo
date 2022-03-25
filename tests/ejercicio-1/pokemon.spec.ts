@@ -2,9 +2,9 @@ import 'mocha';
 import {expect} from 'chai';
 import {Pokemon} from '../../src/ejercicio-1/pokemon';
 
-const Gyarados = new Pokemon('Gyarados', 6.5, 230, 'Water', 65, 60, 110, 500);
-const Chikorita = new Pokemon('Chikorita', 0.9, 6.4, 'Grass', 49, 65, 45, 45);
-const Ninetales = new Pokemon('Ninetales', 1.1, 19.9, 'Fire', 76, 75, 100, 73);
+const Gyarados = new Pokemon('Gyarados', 6.5, 230, 'Water', 65, 60, 110, 500, 'GYAAA!');
+const Chikorita = new Pokemon('Chikorita', 0.9, 6.4, 'Grass', 49, 65, 45, 45, 'Chik Chik');
+const Ninetales = new Pokemon('Ninetales', 1.1, 19.9, 'Fire', 76, 75, 100, 73, 'Argg');
 
 describe('Pokemon class tests', () => {
   describe('Pokemon Class getters', () => {
@@ -47,6 +47,11 @@ describe('Pokemon class tests', () => {
       expect(Gyarados.getHp()).to.be.eql(500);
       expect(Chikorita.getHp()).to.be.eql(45);
       expect(Ninetales.getHp()).to.be.eql(73);
+    });
+    it('getPhrase method', () => {
+      expect(Gyarados.getPhrase()).to.be.eql('GYAAA!');
+      expect(Chikorita.getPhrase()).to.be.eql('Chik Chik');
+      expect(Ninetales.getPhrase()).to.be.eql('Argg');
     });
   });
 });
