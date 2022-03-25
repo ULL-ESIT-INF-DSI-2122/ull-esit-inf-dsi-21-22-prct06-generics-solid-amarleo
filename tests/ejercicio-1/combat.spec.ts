@@ -57,15 +57,15 @@ describe('Combat Class tests', () => {
   });
   describe('Fighter Start Combat Function', () => {
     it('Example 1: Gyarados vs Ninetales', () => {
-      console.log(GyaradosVsNinetales.start());
+      // console.log(GyaradosVsNinetales.start());
       expect(GyaradosVsNinetales.start()).to.have.string('Gyarados Wins!');
     });
     it('Example 2: Chikorita vs Gyarados', () => {
-      console.log(ChikoritaVsGyarados.start());
+      // console.log(ChikoritaVsGyarados.start());
       expect(ChikoritaVsGyarados.start()).to.have.string('Gyarados Wins!');
     });
     it('Example 3: Ajak vs Doctor Strange', () => {
-      console.log(AjakVsDoctorStrange.start());
+      // console.log(AjakVsDoctorStrange.start());
       expect(AjakVsDoctorStrange.start()).to.have.string('Doctor Strange Wins!');
     });
     it('Example 4: Ajak vs Heimdall', () => {
@@ -73,7 +73,7 @@ describe('Combat Class tests', () => {
       expect(AjakVsHeimdall.start()).to.have.string('Ajak Wins!');
     });
     it('Example 5: Ninetales vs Heimdall', () => {
-      console.log(NinetalesVsAjak.start());
+      // console.log(NinetalesVsAjak.start());
       expect(NinetalesVsAjak.start()).to.have.string('Ajak Wins!');
     });
   });

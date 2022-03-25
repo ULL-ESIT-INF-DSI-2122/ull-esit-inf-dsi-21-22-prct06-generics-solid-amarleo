@@ -24,6 +24,13 @@ describe('Universe Class Tests', () => {
     });
   });
 
+  describe('Universe constructor', () => {
+    it('Default value constructor', () => {
+      const emptyUniverse = new Universe();
+      expect(emptyUniverse.list).to.be.eql([]);
+    });
+  });
+
   describe('Universe methods', () => {
     it('getUniverseList', () => {
       expect(universe.getUniverseList()).to.be.eql([Gyarados, ajak, Chikorita, doctorStrange]);
