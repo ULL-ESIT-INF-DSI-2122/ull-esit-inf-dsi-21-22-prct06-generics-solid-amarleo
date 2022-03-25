@@ -13,7 +13,7 @@ describe('Marvel class tests', () => {
     it('getName method', () => {
       expect(ajak.getName()).to.be.eql('Ajak');
       expect(doctorStrange.getName()).to.be.eql('Doctor Strange');
-      expect(heimdall.getName()).to.be.eql('heimdall');
+      expect(heimdall.getName()).to.be.eql('Heimdall');
     });
     it('getHeight method', () => {
       expect(ajak.getHeight()).to.be.eql(1.7);
@@ -25,10 +25,10 @@ describe('Marvel class tests', () => {
       expect(doctorStrange.getWeight()).to.be.eql(75);
       expect(heimdall.getWeight()).to.be.eql(80);
     });
-    it('getType method', () => {
-      expect(ajak.getType()).to.be.eql('Eternal');
-      expect(doctorStrange.getType()).to.be.eql('Human');
-      expect(heimdall.getType()).to.be.eql('Asgardian');
+    it('getSpecies method', () => {
+      expect(ajak.getSpecies()).to.be.eql('Eternal');
+      expect(doctorStrange.getSpecies()).to.be.eql('Human');
+      expect(heimdall.getSpecies()).to.be.eql('Asgardian');
     });
     it('getAttack method', () => {
       expect(ajak.getAttack()).to.be.eql(200);
