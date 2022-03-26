@@ -5,7 +5,7 @@ import {Film} from '../../src/ejercicio-2/film';
 
 const django = new Film('Django Unchained', 'Quentin Tarantino', 'Western', 2012, 4);
 const stuartLittle = new Film('Stuart Little', 'Rob Minkoff', 'Infantil', 1999, 4);
-// const johnWick = new Film('John Wick', 'Chad Stahelski', 'Accion', 2014, 5);
+const johnWick = new Film('John Wick', 'Chad Stahelski', 'Accion', 2014, 5);
 
 const emptyFilmCollection = new FilmCollection();
 const exampleFilmCollection = new FilmCollection([django, stuartLittle]);
@@ -28,6 +28,19 @@ describe('film Collection class', () => {
       expect(exampleFilmCollection.searchBy('genre', 'Infantil')).to.be.eql([stuartLittle]);
       expect(exampleFilmCollection.searchBy('year', 1999)).to.be.eql([stuartLittle]);
       expect(exampleFilmCollection.searchBy('ranking', 4)).to.be.eql([django, stuartLittle]);
+    });
+    it('getNumberOfItems method', () => {
+      expect(exampleFilmCollection.getNumberOfItems()).to.be.eql(2);
+      expect(emptyFilmCollection.getNumberOfItems()).to.be.eql(0);
+    });
+    it('addItem method', () => {
+      emptyFilmCollection.addItem(johnWick);
+      console.log(emptyFilmCollection);
+      expect(emptyFilmCollection.getNumberOfItems()).to.be.eql(1);
+    });
+    it('deleteItem method', () => {
+      emptyFilmCollection.deleteItem(johnWick);
+      expect(emptyFilmCollection.getNumberOfItems()).to.be.eql(0);
     });
   });
 });
