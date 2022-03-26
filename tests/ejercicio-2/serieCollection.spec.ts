@@ -27,7 +27,7 @@ describe('serie Collection class', () => {
       expect(exampleSerieCollection.searchBy('director', 'Kate Herron')).to.be.eql([Loki]);
       expect(exampleSerieCollection.searchBy('genre', 'SuperHéroes')).to.be.eql([Loki]);
       expect(exampleSerieCollection.searchBy('year', 2021)).to.be.eql([Loki]);
-      expect(exampleSerieCollection.searchBy('ranking', 5)).to.be.eql([LCDP, Loki]);
+      expect(exampleSerieCollection.searchBy('ranking', 5)).to.be.eql([Loki]);
     });
     it('getNumberOfItems method', () => {
       expect(exampleSerieCollection.getNumberOfItems()).to.be.eql(2);
@@ -35,7 +35,6 @@ describe('serie Collection class', () => {
     });
     it('addItem method', () => {
       emptySerieCollection.addItem(HTGAWM);
-      console.log(emptySerieCollection);
       expect(emptySerieCollection.getNumberOfItems()).to.be.eql(1);
     });
     it('deleteItem method', () => {
