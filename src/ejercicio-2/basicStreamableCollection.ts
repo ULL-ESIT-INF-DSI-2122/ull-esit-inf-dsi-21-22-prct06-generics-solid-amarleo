@@ -1,6 +1,6 @@
 import {Streamable} from './streamable';
 
-export abstract class basicStreamableCollection <T> implements Streamable <T> {
+export abstract class basicStreamableCollection<T> implements Streamable<T> {
   collection: T[];
 
   constructor(collection: T[] = []) {

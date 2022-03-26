@@ -1,6 +1,6 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Film} from '../../src/film';
+import {Film} from '../../src/ejercicio-2/film';
 
 const django = new Film('Django Unchained', 'Quentin Tarantino', 'Western', 2012, 4);
 const stuartLittle = new Film('Stuart Little', 'Rob Minkoff', 'Infantil', 1999, 4);
@@ -17,9 +17,9 @@ describe('Film class tests', () => {
       expect(emptyFilm.ranking).to.be.eql(0);
     });
     it('django Film object', () => {
-      expect(django.title).to.be.eql('Django');
+      expect(django.title).to.be.eql('Django Unchained');
       expect(django.director).to.be.eql('Quentin Tarantino');
-      expect(django.genre).to.be.eql('Wéstern');
+      expect(django.genre).to.be.eql('Western');
       expect(django.year).to.be.eql(2012);
       expect(django.ranking).to.be.eql(4);
     });
@@ -40,7 +40,7 @@ describe('Film class tests', () => {
   });
   describe('Film getters', () => {
     it('Get Tittle method', () => {
-      expect(johnWick.getTittle()).to.be.eql('John Wick');
+      expect(johnWick.getTitle()).to.be.eql('John Wick');
     });
     it('Get director method', () => {
       expect(johnWick.getDirector()).to.be.eql('Chad Stahelski');
