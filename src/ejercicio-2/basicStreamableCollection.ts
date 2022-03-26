@@ -1,13 +1,13 @@
 import {Streamable} from './streamable';
 
-export abstract class basicStreamableCollection<T> implements Streamable<T> {
+export abstract class BasicStreamableCollection<T> implements Streamable<T> {
   collection: T[];
 
   constructor(collection: T[] = []) {
     this.collection = collection;
   }
 
-  abstract searchBy(collection: T[], key: string): T[];
+  abstract searchBy(key: string, search: string | number): T[] | string;
 
   getNumberOfItems(): number {
     return this.collection.length;
