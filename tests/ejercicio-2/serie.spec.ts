@@ -21,21 +21,21 @@ describe('serie class tests', () => {
       expect(LCDP.director).to.be.eql('Jesús Colmenar');
       expect(LCDP.genre).to.be.eql('Drama');
       expect(LCDP.year).to.be.eql(2017);
-      expect(LCDP.ranking).to.be.eql(4);
+      expect(LCDP.ranking).to.be.eql(4.5);
     });
     it('Loki serie object', () => {
       expect(Loki.title).to.be.eql('Loki');
       expect(Loki.director).to.be.eql('Kate Herron');
       expect(Loki.genre).to.be.eql('SuperHéroes');
       expect(Loki.year).to.be.eql(2021);
-      expect(Loki.ranking).to.be.eql(4);
+      expect(Loki.ranking).to.be.eql(5);
     });
     it('LCDP serie object', () => {
       expect(HTGAWM.title).to.be.eql('How to get away with murder');
       expect(HTGAWM.director).to.be.eql('Peter Nowalk');
       expect(HTGAWM.genre).to.be.eql('Accion');
       expect(HTGAWM.year).to.be.eql(2014);
-      expect(HTGAWM.ranking).to.be.eql(5);
+      expect(HTGAWM.ranking).to.be.eql(4);
     });
   });
   describe('serie getters', () => {
@@ -52,7 +52,7 @@ describe('serie class tests', () => {
       expect(HTGAWM.getYear()).to.be.eql(2014);
     });
     it('Get ranking method', () => {
-      expect(HTGAWM.getRanking()).to.be.eql(5);
+      expect(HTGAWM.getRanking()).to.be.eql(4);
     });
   });
 });
