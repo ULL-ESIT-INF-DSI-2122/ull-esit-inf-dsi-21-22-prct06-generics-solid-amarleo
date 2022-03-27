@@ -1,5 +1,7 @@
 # Práctica 6: Clases e interfaces genéricas. Principios SOLID
 
+[![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct05-objects-classes-interfaces-amarleo/badge.svg?branch=master)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct05-objects-classes-interfaces-amarleo?branch=master)
+
 ## Indice
 
   - [Introducción](#introducción)
@@ -307,6 +309,36 @@ El algoritmo define según la posición de los carácteres del alfabeto y de la 
 El algoritmo de decipher es similar, solo que en este caso, en lugar de sumar los valores que representan a cada letra del input y la extedndedkey, se resta el input con la clave extendida. Este valor, en caso de ser menor a 0, se procede a ser sumado por el tamaño del alfabeto, calculando así el el carácter descifrado.
 
 Estos métodos han sido todos probados dentro de los ficheros de espectativas del directorio tests.
+
+### Coveralls
+
+Finalmnete se han generado todos los tests a través de Instanbul y Coveralls
+
+```bash
+-------------------------------|---------|----------|---------|---------|-------------------
+File                           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------------------|---------|----------|---------|---------|-------------------
+All files                      |   95.05 |    83.33 |     100 |   96.69 |                   
+ ejercicio-1                   |   89.69 |    68.88 |     100 |    93.9 |                   
+  combat.ts                    |   84.84 |    68.18 |     100 |    90.9 | 44-45,56-57,114   
+  fighter.ts                   |     100 |      100 |     100 |     100 |                   
+  marvel.ts                    |     100 |      100 |     100 |     100 |                   
+  pokemon.ts                   |     100 |      100 |     100 |     100 |                   
+  universe.ts                  |     100 |      100 |     100 |     100 |                   
+ ejercicio-2                   |   97.45 |    92.59 |     100 |   97.43 |                   
+  basicStreamableCollection.ts |     100 |    33.33 |     100 |     100 | 12-45             
+  documental.ts                |     100 |      100 |     100 |     100 |                   
+  documentalCollection.ts      |   96.15 |    95.23 |     100 |   96.15 | 55                
+  film.ts                      |     100 |      100 |     100 |     100 |                   
+  filmCollection.ts            |   96.15 |    90.47 |     100 |   96.15 | 51                
+  serie.ts                     |     100 |      100 |     100 |     100 |                   
+  serieCollection.ts           |   96.15 |    95.23 |     100 |   96.15 | 55                
+ ejercicio-3                   |     100 |    66.66 |     100 |     100 |                   
+  alphabet.ts                  |     100 |        0 |     100 |     100 | 6                 
+  cipher.ts                    |     100 |      100 |     100 |     100 |                   
+  key.ts                       |     100 |        0 |     100 |     100 | 6                 
+-------------------------------|---------|----------|---------|---------|-------------------
+```
 
 ## Conclusión
 
