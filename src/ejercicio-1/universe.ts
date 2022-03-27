@@ -20,7 +20,7 @@ export class Universe {
   getUniverseList(): Fighter[] {
     return this.list;
   }
-  
+
   /**
    * Universe list setter
    * @param fighter fighter add list
