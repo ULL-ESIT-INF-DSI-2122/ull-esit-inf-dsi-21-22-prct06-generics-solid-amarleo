@@ -2,10 +2,19 @@ import {BasicStreamableCollection} from './basicStreamableCollection';
 import {Film} from './film';
 
 export class FilmCollection extends BasicStreamableCollection<Film> {
+  /**
+   * Film Collection Constructor
+   * @param collection array of documental objects
+   */
   constructor(collection: Film[] = []) {
     super(collection);
   }
-
+  /**
+   * searchBy method
+   * @param key string with the category to search by
+   * @param search string or number to search
+   * @returns Documental object array or string error
+   */
   searchBy(key: string, search: string | number): Film[] | string {
     let result: Film[] = [];
     if (key === 'title') {

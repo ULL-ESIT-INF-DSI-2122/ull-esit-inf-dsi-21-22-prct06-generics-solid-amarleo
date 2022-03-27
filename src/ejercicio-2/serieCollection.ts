@@ -1,11 +1,24 @@
 import {BasicStreamableCollection} from './basicStreamableCollection';
 import {Serie} from './serie';
 
+/**
+ * Serie Colllection Class
+ */
 export class SerieCollection extends BasicStreamableCollection<Serie> {
+  /**
+   * Serie Collection Constructor
+   * @param collection array of Serue objects
+   */
   constructor(collection: Serie[] = []) {
     super(collection);
   }
 
+  /**
+   * searchBy method
+   * @param key string of number to search
+   * @param search string of number to search
+   * @returns Serie object array or string error
+   */
   searchBy(key: string, search: string | number): Serie[] | string {
     let result: Serie[] = [];
     if (key === 'title') {
