@@ -1,6 +1,22 @@
 {
   "entryPoints": [
-    "./src/modificacion/arithmeticable.ts"
+    "./src/modificacion/arithmeticable.ts",
+    "./src/ejercicio-1/combat.ts",
+    "./src/ejercicio-1/fighter.ts",
+    "./src/ejercicio-1/marvel.ts",
+    "./src/ejercicio-1/pokemon.ts",
+    "./src/ejercicio-1/combat.ts",
+    "./src/ejercicio-2/basicStreamableCollection.ts",
+    "./src/ejercicio-2/documentalCollection.ts",
+    "./src/ejercicio-2/filmCollection.ts",
+    "./src/ejercicio-2/filmCollection.ts",
+    "./src/ejercicio-2/serie.ts",
+    "./src/ejercicio-2/streamable.ts",
+    "./src/ejercicio-2/film.ts",
+    "./src/ejercicio-2/documental.ts",
+    "./src/ejercicio-3/alphabet.ts",
+    "./src/ejercicio-3/cipher.ts",
+    "./src/ejercicio-3/key.ts"
   ],
   "out": "./docs"
 }

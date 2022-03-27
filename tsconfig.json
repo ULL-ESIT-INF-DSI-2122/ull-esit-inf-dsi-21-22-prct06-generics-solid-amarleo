@@ -5,9 +5,23 @@
       "./dist"
     ],
     "files": [
-      "./src/ejercicio-1/fighter.ts",
-      "./src/ejercicio-1/pokemon.ts",
-    "./src/modificacion/arithmeticable.ts"
+    "./src/modificacion/arithmeticable.ts",
+    "./src/ejercicio-1/combat.ts",
+    "./src/ejercicio-1/fighter.ts",
+    "./src/ejercicio-1/marvel.ts",
+    "./src/ejercicio-1/pokemon.ts",
+    "./src/ejercicio-1/combat.ts",
+    "./src/ejercicio-2/basicStreamableCollection.ts",
+    "./src/ejercicio-2/documentalCollection.ts",
+    "./src/ejercicio-2/filmCollection.ts",
+    "./src/ejercicio-2/filmCollection.ts",
+    "./src/ejercicio-2/serie.ts",
+    "./src/ejercicio-2/streamable.ts",
+    "./src/ejercicio-2/film.ts",
+    "./src/ejercicio-2/documental.ts",
+    "./src/ejercicio-3/alphabet.ts",
+    "./src/ejercicio-3/cipher.ts",
+    "./src/ejercicio-3/key.ts"
     ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
@@ -22,7 +36,7 @@
 
     /* Language and Environment */
     "target": "ES2020",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+    // "lib": [],                                        /* Specify a set of bundled library declaration files that desrcibe the target runtime environment. */
     // "jsx": "preserve",                                /* Specify what JSX code is generated. */
     // "experimentalDecorators": true,                   /* Enable experimental support for TC39 stage 2 draft decorators. */
     // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
