@@ -51,7 +51,7 @@ export class Cipher {
 
   /**
    * cipher method
-   * @returns cipher word
+   * @returns ciphered word
    */
   cipher(): string {
     let d: number = 0;
@@ -67,6 +67,10 @@ export class Cipher {
     }
     return word;
   }
+  /**
+   * Decipher method
+   * @returns deciphered word
+   */
   decipher(): string {
     let d: number = 0;
     let inputNumber: number = 0;
