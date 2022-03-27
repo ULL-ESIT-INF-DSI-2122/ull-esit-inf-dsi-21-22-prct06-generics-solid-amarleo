@@ -20,5 +20,8 @@ describe('Alphabet Class tests', () => {
       alphabet.setContent('ABCD');
       expect(alphabet.getContent()).to.be.eql('ABCD');
     });
+    it('getSize', () => {
+      expect(alphabet.getSize()).to.be.eql(4);
+    });
   });
 });
