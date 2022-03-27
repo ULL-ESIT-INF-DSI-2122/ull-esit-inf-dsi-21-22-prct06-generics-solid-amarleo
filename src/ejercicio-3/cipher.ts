@@ -1,11 +1,20 @@
 import {Alphabet} from './alphabet';
 import {Key} from './key';
 
+/**
+ * Cipher Class
+ */
 export class Cipher {
   alphabet: Alphabet;
   key: Key;
   input: string;
   extendedKey: string;
+  /**
+   * Alphabet Class Constructor
+   * @param alphabet Alphabet Object
+   * @param key Key Object
+   * @param input string with the cipher
+   */
   constructor(alphabet: Alphabet, key: Key, input: string) {
     this.alphabet = alphabet;
     this.key = key;
@@ -15,18 +24,35 @@ export class Cipher {
       this.extendedKey += key.getContent()[i];
     }
   }
+
+  /**
+   * Alphabet getter
+   * @returns alphabet object
+   */
   getAlphabet(): Alphabet {
     return this.alphabet;
   }
 
+  /**
+   * Key getter
+   * @returns key object
+   */
   getKey(): Key {
     return this.key;
   }
 
+  /**
+   * Input getter
+   * @returns string input
+   */
   getInput(): string {
     return this.input;
   }
 
+  /**
+   * cipher method
+   * @returns cipher word
+   */
   cipher(): string {
     let d: number = 0;
     let inputNumber: number = 0;
