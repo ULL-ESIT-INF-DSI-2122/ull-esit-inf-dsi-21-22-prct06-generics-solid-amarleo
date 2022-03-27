@@ -8,17 +8,35 @@ import {Pokemon} from './pokemon';
 export class Combat {
   firstFighter: Fighter;
   secondFighter: Fighter;
-
+  /**
+   * Combat Class constructor
+   * @param firstFighter Fighter Object
+   * @param secondFighter Second Object
+   */
   constructor(firstFighter: Fighter, secondFighter: Fighter) {
     this.firstFighter = firstFighter;
     this.secondFighter = secondFighter;
   }
+  /**
+   * First Fighter getter
+   * @returns Fighter Object
+   */
   getFirstFighter() {
     return this.firstFighter;
   }
+  /**
+   * Second Fighter getter
+   * @returns Fighter Object
+   */
   getSecondFighter() {
     return this.secondFighter;
   }
+  /**
+   * Method that calculates the Damage caused to a fighter
+   * @param atkFighter offensive fighter
+   * @param defFighter deffensive fighter
+   * @returns number with the damage caused
+   */
   fighterDamage(atkFighter: Fighter, defFighter: Fighter): number {
     let multiplier: number = 1;
     if ((atkFighter instanceof Pokemon) && (defFighter instanceof Pokemon)) {
@@ -48,6 +66,10 @@ export class Combat {
     return Math.round(
         50 * (atkFighter.getAttack() / defFighter.getDefense()) * multiplier);
   }
+  /**
+   * Combat simulation method
+   * @returns strings with all combat history
+   */
   start(): string {
     let firstFighterTotalDamage: number = 0;
     let secondFighterTotalDamage: number = 0;
