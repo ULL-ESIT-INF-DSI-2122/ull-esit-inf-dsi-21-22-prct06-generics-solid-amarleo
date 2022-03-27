@@ -245,6 +245,69 @@ En esta clase se ha definido además, el método que había sido declarado como 
 ```
 Como se puede observar, además se devuelve un código de error en caso de introducirse mal la categoría. El funcionamiento de este método y el resto, se puede observar dentro de todos los ficheros de especativas creados apoyados en Mocha y Chai.
 
+El conjunto de clases ha sido ideado de forma a respetar el principio de Single Responsability, con la intención de que cada clase tenga responsabilidad con una sola parte de la funcionalidad.
+
 ### Ejercicio 3: El cifrado indescifrable
 
+Este ejercicio se ha ideando de acuerdo a considerar principalmente tres clases: 
+
+- Alphabet
+- Cipher
+- Key
+
+En primer lugar, como su nombre bien lo indica, Alphabet se encarga en grandes rasgos de establecer el alfabeto como un objeto. De esta forma se facilita y se obtiene la posibilidad de crear métodos propios para la obtención o la modificación de datos. Así mismo se ha ideado con la clase Key.
+
+Por otro lado, se encuentra Cipher, que no es más que la clase encargada de gestionar las entradas y de realizar las diferentes operaciones en el cifrado y/o descifrado de textos.
+
+La clase Cipher se ha ideado con los atributos: 
+
+```typescript
+export class Cipher {
+  alphabet: Alphabet;
+  key: Key;
+  input: string;
+  extendedKey: string;
+```
+Donde como se puede observar, se tiene a alphabet como Objeto Alphabet, key como objeto Key, y como strings para input y extendedkey. Por un lado, input se trata del texto a cifrar, miestras que extendedKey contendrá la clave establecida para el cifrado pero extendida con el mismo tamaño del input.
+
+```typescript
+  constructor(alphabet: Alphabet, key: Key, input: string) {
+    this.alphabet = alphabet;
+    this.key = key;
+    this.input = input;
+    this.extendedKey = key.getContent().repeat((input.length / key.getSize()));
+    for (let i = 0; i < input.length % key.getSize(); i++) {
+      this.extendedKey += key.getContent()[i];
+    }
+  }
+```
+Esto ha sido controlado dentro del propio constructor de la clase, donde por un lado se han inicializado cada una de los atributos, y por otro lado, se ha generado la clave extendida en función del tamaño del input. Se ha hecho uso del método repeat, que se encarga de repetir un string tantas veces como se le indique. 
+
+Obviando algunos de los métodos como pueden ser los getters y setters de la clase, se procede a desarrollar los códigos propuestos para el cifrado y el descrifrado. En primer lugar se cuenta con **cipher**, método el cual llamado desde un objeto de la clase, permite cifrar un texto. El algoritmo es el siguiente: 
+
+```typescript
+  cipher(): string {
+    let d: number = 0;
+    let inputNumber: number = 0;
+    let word: string = '';
+    for (let i = 0; i < this.input.length; i++) {
+      d = this.alphabet.getContent().indexOf(this.extendedKey[i]) + 1;
+      inputNumber = this.alphabet.getContent().indexOf(this.input[i]);
+      d += inputNumber;
+      if (d >= this.alphabet.getSize()) d = d % this.alphabet.getSize();
+      word += this.alphabet.content[d];
+      d = 0;
+    }
+    return word;
+  }
+```
+
+El algoritmo define según la posición de los carácteres del alfabeto y de la clave extendida, cuál es el número que representa a la letra indicada en el alfabeto. Si el número es superior al tamaño del alfabeto, se calcula el resto. Esa letra es setteada en un string. Una vez terminado el bucle, se retona el string.
+
+El algoritmo de decipher es similar, solo que en este caso, en lugar de sumar los valores que representan a cada letra del input y la extedndedkey, se resta el input con la clave extendida. Este valor, en caso de ser menor a 0, se procede a ser sumado por el tamaño del alfabeto, calculando así el el carácter descifrado.
+
+Estos métodos han sido todos probados dentro de los ficheros de espectativas del directorio tests.
+
 ## Conclusión
+
+Para finalizar, comentar que esta práctica ha servido para poner a prueba nuevos conceptos de Typescript, donde se ha aprendido conceptos avanzados de clases, así como de poner en práctica más a fondo los principios SOLID.
