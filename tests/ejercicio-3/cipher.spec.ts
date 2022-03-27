@@ -6,13 +6,18 @@ import {Key} from '../../src/ejercicio-3/key';
 
 const testAlphabet = new Alphabet('ABCDEFGHIJKLMNÑOPQRSTUVWXYZ');
 const testKey = new Key('CLAVE');
-const testCipher = new Cipher(testAlphabet, testKey);
+const testInput = 'HOLAESTOESUNAPRUEBA';
+const testCipher = new Cipher(testAlphabet, testKey, testInput);
 
 describe('Cipher Class tests', () => {
   describe('Cipher Class Constructor', () => {
     it('Cipher attributes must be visibles', () => {
       expect(testCipher.alphabet).to.be.eql(testAlphabet);
       expect(testCipher.key).to.be.eql(testKey);
+      expect(testCipher.input).to.be.eql(testInput);
+    });
+    it('Cipher input and extended key must have the same lenght', () => {
+      expect(testCipher.input.length).to.be.eql(testCipher.extendedKey.length);
     });
   });
   describe('Cipher getter Methods', () => {
@@ -21,6 +26,9 @@ describe('Cipher Class tests', () => {
     });
     it('getKey', () => {
       expect(testCipher.getKey()).to.be.eql(testKey);
+    });
+    it('getInput', () => {
+      expect(testCipher.getInput()).to.be.eql(testInput);
     });
   });
   describe('Cipher Methods', () => {
