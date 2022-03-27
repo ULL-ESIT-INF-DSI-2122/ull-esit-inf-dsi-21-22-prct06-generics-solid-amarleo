@@ -8,6 +8,7 @@ const testAlphabet = new Alphabet('ABCDEFGHIJKLMNÑOPQRSTUVWXYZ');
 const testKey = new Key('CLAVE');
 const testInput = 'HOLAESTOESUNAPRUEBA';
 const testCipher = new Cipher(testAlphabet, testKey, testInput);
+const anotherCipher = new Cipher(testAlphabet, testKey, 'KAMWJVFPAXXYBMWXPCW');
 
 describe('Cipher Class tests', () => {
   describe('Cipher Class Constructor', () => {
@@ -35,9 +36,9 @@ describe('Cipher Class tests', () => {
     it('Cipher', () => {
       expect(testCipher.cipher()).to.be.eql('KAMWJVFPAXXYBMWXPCW');
     });
-    it('Decipher', () => {
-
-    });
+    // it('Decipher', () => {
+    //   expect(testCipher.decipher()).to.be.eql('HOLAESTOESUNAPRUEBA');
+    // });
   });
 });
 

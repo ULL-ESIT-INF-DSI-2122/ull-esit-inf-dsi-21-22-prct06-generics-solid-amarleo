@@ -41,4 +41,18 @@ export class Cipher {
     }
     return word;
   }
+  // decipher(): string {
+  //   let d: number = 0;
+  //   let inputNumber: number = 0;
+  //   let word: string = '';
+  //   for (let i = 0; i < this.input.length; i++) {
+  //     d = this.alphabet.getContent().indexOf(this.extendedKey[i]) + 1;
+  //     inputNumber = this.alphabet.getContent().indexOf(this.input[i]);
+  //     d += inputNumber;
+  //     if (d >= this.alphabet.getSize()) d = d % this.alphabet.getSize();
+  //     word += this.alphabet.content[d];
+  //     d = 0;
+  //   }
+  //   return word;
+  // }
 }
