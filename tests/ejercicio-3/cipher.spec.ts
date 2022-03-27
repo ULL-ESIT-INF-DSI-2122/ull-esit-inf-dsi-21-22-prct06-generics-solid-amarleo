@@ -32,6 +32,12 @@ describe('Cipher Class tests', () => {
     });
   });
   describe('Cipher Methods', () => {
+    it('Cipher', () => {
+      expect(testCipher.cipher()).to.be.eql('KAMWJVFPAXXYBMWXPCW');
+    });
+    it('Decipher', () => {
+
+    });
   });
 });
 
