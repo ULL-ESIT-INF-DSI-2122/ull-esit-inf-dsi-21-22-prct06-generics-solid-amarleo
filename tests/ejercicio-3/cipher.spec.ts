@@ -11,20 +11,16 @@ const testCipher = new Cipher(testAlphabet, testKey);
 describe('Cipher Class tests', () => {
   describe('Cipher Class Constructor', () => {
     it('Cipher attributes must be visibles', () => {
-      expect(testCipher.alphabet).to.be.eql('ABCDEFGHIJKLMNÑOPQRSTUVWXYZ');
-      expect(testCipher.key).to.be.eql('CLAVE');
-      expect(testCipher.extendedKey).to.be.eql('CLAVECLAVECLAVECLAV');
+      expect(testCipher.alphabet).to.be.eql(testAlphabet);
+      expect(testCipher.key).to.be.eql(testKey);
     });
   });
   describe('Cipher getter Methods', () => {
     it('getAlphabet', () => {
-      expect(testCipher.getAlphabet()).to.be.eql('ABCDEFGHIJKLMNÑOPQRSTUVWXYZ');
+      expect(testCipher.getAlphabet()).to.be.eql(testAlphabet);
     });
     it('getKey', () => {
-      expect(testCipher.getKey()).to.be.eql('CLAVE');
-    });
-    it('get Extended key', () => {
-      expect(testCipher.getExtendedKey()).to.be.eql('CLAVECLAVECLAVECLAV');
+      expect(testCipher.getKey()).to.be.eql(testKey);
     });
   });
   describe('Cipher Methods', () => {
