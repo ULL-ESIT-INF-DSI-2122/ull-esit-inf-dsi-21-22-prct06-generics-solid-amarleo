@@ -36,9 +36,9 @@ describe('Cipher Class tests', () => {
     it('Cipher', () => {
       expect(testCipher.cipher()).to.be.eql('KAMWJVFPAXXYBMWXPCW');
     });
-    // it('Decipher', () => {
-    //   expect(testCipher.decipher()).to.be.eql('HOLAESTOESUNAPRUEBA');
-    // });
+    it('Decipher', () => {
+      expect(anotherCipher.decipher()).to.be.eql('HOLAESTOESUNAPRUEBA');
+    });
   });
 });
 
