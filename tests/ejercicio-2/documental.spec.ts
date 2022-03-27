@@ -28,7 +28,7 @@ describe('documental class tests', () => {
       expect(rescate.director).to.be.eql('Elizabeth Chai Vasarhelyi');
       expect(rescate.genre).to.be.eql('Catástrofes');
       expect(rescate.year).to.be.eql(2021);
-      expect(rescate.ranking).to.be.eql(5);
+      expect(rescate.ranking).to.be.eql(4);
     });
     it('pulpo documental object', () => {
       expect(BobRoss.title).to.be.eql('Bob Ross: Happy Accidents, Betrayal & Greed');

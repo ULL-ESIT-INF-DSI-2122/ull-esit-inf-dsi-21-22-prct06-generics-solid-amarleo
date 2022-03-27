@@ -28,7 +28,7 @@ describe('documental Collection class', () => {
       expect(exampleDocumentalCollection.searchBy('director', 'Elizabeth Chai Vasarhelyi')).to.be.eql([rescate]);
       expect(exampleDocumentalCollection.searchBy('genre', 'Catástrofes')).to.be.eql([rescate]);
       expect(exampleDocumentalCollection.searchBy('year', 2021)).to.be.eql([rescate]);
-      expect(exampleDocumentalCollection.searchBy('ranking', 5)).to.be.eql([rescate]);
+      expect(exampleDocumentalCollection.searchBy('ranking', 5)).to.be.eql([pulpo]);
     });
     it('getNumberOfItems method', () => {
       expect(exampleDocumentalCollection.getNumberOfItems()).to.be.eql(2);

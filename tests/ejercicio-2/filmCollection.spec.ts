@@ -35,7 +35,6 @@ describe('film Collection class', () => {
     });
     it('addItem method', () => {
       emptyFilmCollection.addItem(johnWick);
-      console.log(emptyFilmCollection);
       expect(emptyFilmCollection.getNumberOfItems()).to.be.eql(1);
     });
     it('deleteItem method', () => {
